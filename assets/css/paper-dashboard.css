@@ -6183,8 +6183,8 @@ License - nucleoapp.com/license/
     text-align: right!important;
 }
 
-.table-c-abf-center th:not(:first-child),
-.table-c-abf-center td:not(:first-child) {
+.table-c-2-e-center th:not(:first-child),
+.table-c-2-e-center td:not(:first-child) {
     text-align: center!important;
 }
 

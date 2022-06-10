@@ -26,12 +26,17 @@ table-exclusoes-desenvolvimento: Tabela de exclusões de desenvolvimento
 table-exclusoes-oot: Tabela de exclusões de out-of-time
 table-exclusoes-recente: Tabela de exclusões de recente
 
-# Variáveis
-table-variaveis-entrada: Tabela de variáveis de entrada
-
-# Variáveis/Resposta
+== Resposta
 graph-resposta-estabilidade
 
+== Variáveis
+table-variaveis-entrada: Tabela de variáveis de entrada
+
+== Variáveis Importancias
+variaveis-quantidade-selecao: Quantidade de variáveis selecionadas
+variaveis-quantidade-top90pc: Quantidade de variáveis representando 90% das importâncias
+table-variaveis-importancias: Tabela da importância das variáveis
+graph-variaveis-importancias: Gráfico da importância das variáveis
 
  -->
 <!doctype html>
@@ -66,18 +71,18 @@ graph-resposta-estabilidade
                         <p>Documentação</p>
                     </a>
                 </li>
+                <!-- Resposta -->
+                <li class="nav-item" id="nav-resposta-tab" data-toggle="tab" role="tab" aria-controls="nav-resposta" aria-selected="false" href="#nav-resposta">
+                    <a href="#">
+                        <i class="bi bi-signpost-split"></i>
+                        <p>Resposta</p>
+                    </a>
+                </li>
                 <!-- Variáveis -->
                 <li class="nav-item" id="nav-variaveis-tab" data-toggle="tab" role="tab" aria-controls="nav-variaveis" aria-selected="false" href="#nav-variaveis">
                     <a href="#">
                         <i class="bi bi-columns-gap"></i>
                         <p>Variáveis</p>
-                    </a>
-                </li>
-                <!-- Variáveis / Resposta -->
-                <li class="nav-item" id="nav-variaveis-resposta-tab" data-toggle="tab" role="tab" aria-controls="nav-variaveis-resposta" aria-selected="false" href="#nav-variaveis-resposta">
-                    <a class="border-left ml-5 mt-0" href="#">
-                        <i class="bi bi-signpost-split"></i>
-                        <p>Resposta</p>
                     </a>
                 </li>
                 <!-- Variáveis / Selecao -->
@@ -282,37 +287,14 @@ graph-resposta-estabilidade
                 </div>
                 <!-- / Page - Documentação -->
 
-                <!-- Page - Variáveis -->
-                <div class="tab-pane fade" id="nav-variaveis" role="tabpanel" aria-labelledby="nav-variaveis-tab">
-                    <div class="row">
-                        <!-- Variáveis -->
-                        <div class="col">
-                            <div class="card flex-fill">
-                                <div class="card-header">
-                                    <h5 class="card-title"><i class="bi bi-columns-gap"></i>&nbsp;&nbsp;Variáveis de Entrada</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            {table-variaveis-entrada}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- / Page - Variáveis -->
-
-
                 <!-- Page - Resposta -->
-                <div class="tab-pane fade" id="nav-variaveis-resposta" role="tabpanel" aria-labelledby="nav-variaveis-resposta-tab">
+                <div class="tab-pane fade" id="nav-resposta" role="tabpanel" aria-labelledby="nav-resposta-tab">
                     <div class="row">
                         <!-- Resposta -->
                         <div class="col">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5><i class="bi bi-activity"></i> Estabilidade da variável resposta</h5>
+                                    <h5><i class="bi bi-activity"></i> Estabilidade</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -336,19 +318,150 @@ graph-resposta-estabilidade
                 </div>
                 <!-- / Page - Resposta -->
 
-
-                <!-- Page - Seleção -->
-                <div class="tab-pane fade" id="nav-variaveis-selecao" role="tabpanel" aria-labelledby="nav-variaveis-selecao-tab">
+                <!-- Page - Variáveis -->
+                <div class="tab-pane fade" id="nav-variaveis" role="tabpanel" aria-labelledby="nav-variaveis-tab">
                     <div class="row">
-                        <!-- Seleção -->
+                        <!-- Variáveis -->
                         <div class="col">
-                            <div class="card">
+                            <div class="card flex-fill">
                                 <div class="card-header">
-                                    <h5><i class="bi bi-funnel"></i> Selecao e Importância</h5>
+                                    <h5 class="card-title"><i class="bi bi-columns-gap"></i>&nbsp;&nbsp;Variáveis de Entrada</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
+                                            {table-variaveis-entrada}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / Page - Variáveis -->
+
+                <!-- Page - Seleção -->
+                <div class="tab-pane fade" id="nav-variaveis-selecao" role="tabpanel" aria-labelledby="nav-variaveis-selecao-tab">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5><i class="bi bi-info-circle"></i> Fluxo de Seleção</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    Texto explicando processo de seleção de variável
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- Quantidade final de features -->
+                                <div class="col-lg-6 col-12">
+                                    <div class="card card-stats flex-fill">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-5 col-md-4">
+                                                    <div class="icon-big text-center icon-warning" style="font-size: 4em;">
+                                                        <i class="bi bi-hash text-warning"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 col-md-8">
+                                                    <div class="numbers">
+                                                        <p class="card-category">Variáveis Selecionadas</p>
+                                                        <p class="card-title">{variaveis-quantidade-selecao} variáveis
+                                                            <p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <hr>
+                                            <div class="stats dropdown-toggle help" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-info-circle"></i> Info
+                                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
+                                                    <div class="dropdown-item text-wrap bg-light" style="color:#252422 !important">Quantidade de variáveis selecionadas para o modelo</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Concentração de importâncias -->
+                                <div class="col-lg-6 col-12">
+                                    <div class="card card-stats flex-fill">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-5 col-md-4">
+                                                    <div class="icon-big text-center icon-warning" style="font-size: 4em;">
+                                                        <i class="bi bi-pie-chart text-success"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 col-md-8">
+                                                    <div class="numbers">
+                                                        <p class="card-category">90% Importância</p>
+                                                        <p class="card-title">{variaveis-quantidade-top90pc} variáveis
+                                                            <p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <hr>
+                                            <div class="stats dropdown-toggle help" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-info-circle"></i> Info
+                                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
+                                                    <div class="dropdown-item text-wrap bg-light" style="color:#252422 !important">Quantidade de variáveis que representam até 90% da soma das importâncias</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gráfico de Importâncias -->
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5><i class="bi bi-bar-chart-line"></i> Distribuição das Importâncias</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    {graph-variaveis-importancias}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <hr>
+                                            <div class="stats dropdown-toggle help" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-info-circle"></i> Info
+                                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
+                                                    <div class="dropdown-item text-wrap bg-light" style="color:#252422 !important">Info placeholder</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seleção -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-table"></i> Importâncias</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            {table-variaveis-importancias}
                                         </div>
                                     </div>
                                 </div>
