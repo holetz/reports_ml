@@ -6179,12 +6179,12 @@ License - nucleoapp.com/license/
 }
 
 .table-c-l-right th:last-child,
-td:last-child {
+.table-c-l-right td:last-child {
     text-align: right!important;
 }
 
 .table-c-abf-center th:not(:first-child),
-td:not(:first-child) {
+.table-c-abf-center td:not(:first-child) {
     text-align: center!important;
 }
 
@@ -6206,4 +6206,12 @@ td:not(:first-child) {
 .table-r-l-ligthblue tbody tr:last-child {
     background-color: #00A9CE;
     color: #fff;
+}
+
+.table {
+    font-size: 14px;
+}
+
+.table thead {
+    vertical-align: bottom!important;
 }
