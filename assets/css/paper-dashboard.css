@@ -6178,7 +6178,32 @@ License - nucleoapp.com/license/
     cursor: help;
 }
 
-.table-lastasnumber th:last-child,
+.table-c-l-right th:last-child,
 td:last-child {
     text-align: right!important;
+}
+
+.table-c-abf-center th:not(:first-child),
+td:not(:first-child) {
+    text-align: center!important;
+}
+
+.table-r-f-blue tbody tr:first-child {
+    background-color: #165c7d;
+    color: #fff;
+}
+
+.table-r-2-ligthblue tbody tr:nth-child(2) {
+    background-color: #00A9CE;
+    color: #fff;
+}
+
+.table-r-l-blue tbody tr:last-child {
+    background-color: #165c7d;
+    color: #fff;
+}
+
+.table-r-l-ligthblue tbody tr:last-child {
+    background-color: #00A9CE;
+    color: #fff;
 }
